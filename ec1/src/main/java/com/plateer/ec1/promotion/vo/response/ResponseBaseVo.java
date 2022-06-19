@@ -5,5 +5,5 @@ import lombok.Data;
 
 @Data
 public class ResponseBaseVo {
-	String memberNo;
+	private String memberNo;
 }
