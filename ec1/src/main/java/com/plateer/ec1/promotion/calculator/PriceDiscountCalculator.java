@@ -1,4 +1,4 @@
-package com.plateer.ec1.promotion.calculation;
+package com.plateer.ec1.promotion.calculator;
 
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ import com.plateer.ec1.promotion.vo.response.ResponsePriceDiscountVo;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class PriceDiscountCalculation implements Calculation{
+public class PriceDiscountCalculator implements Calculator{
 	
 	private RequestPromotionVo reqVo;
 	
-	public PriceDiscountCalculation(RequestPromotionVo reqVo){
+	public PriceDiscountCalculator(RequestPromotionVo reqVo){
 		this.reqVo = reqVo;
 	}
 	

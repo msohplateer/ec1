@@ -1,4 +1,4 @@
-package com.plateer.ec1.promotion.calculation;
+package com.plateer.ec1.promotion.calculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ProductCouponCalculation implements Calculation{
+public class ProductCouponCalculator implements Calculator{
 	
 	private RequestPromotionVo reqVo;
 	
-	public ProductCouponCalculation(RequestPromotionVo reqVo){
+	public ProductCouponCalculator(RequestPromotionVo reqVo){
 		this.reqVo = reqVo;
 	}
 	
