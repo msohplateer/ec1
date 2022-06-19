@@ -7,8 +7,8 @@ import com.plateer.ec1.promotion.calculation.CartCouponCalculation;
 import com.plateer.ec1.promotion.calculation.PriceDiscountCalculation;
 import com.plateer.ec1.promotion.calculation.ProductCouponCalculation;
 import com.plateer.ec1.promotion.data.PromotionType;
-import com.plateer.ec1.promotion.vo.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.ResponseBaseVo;
+import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
+import com.plateer.ec1.promotion.vo.response.ResponseBaseVo;
 
 import lombok.extern.slf4j.Slf4j;
 

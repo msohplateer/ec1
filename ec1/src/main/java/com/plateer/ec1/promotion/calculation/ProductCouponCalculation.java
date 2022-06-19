@@ -5,21 +5,24 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.plateer.ec1.promotion.vo.CouponProductVo;
-import com.plateer.ec1.promotion.vo.ProductCouponVo;
-import com.plateer.ec1.promotion.vo.Promotion;
-import com.plateer.ec1.promotion.vo.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.ResponseBaseVo;
-import com.plateer.ec1.promotion.vo.ResponseProductCouponVo;
+import com.plateer.ec1.promotion.vo.common.CouponProductVo;
+import com.plateer.ec1.promotion.vo.common.ProductCouponVo;
+import com.plateer.ec1.promotion.vo.common.Promotion;
+import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
+import com.plateer.ec1.promotion.vo.response.ResponseBaseVo;
+import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ProductCouponCalculation implements Calculation{
+	
 	private RequestPromotionVo reqVo;
+	
 	public ProductCouponCalculation(RequestPromotionVo reqVo){
 		this.reqVo = reqVo;
 	}
+	
 	private Promotion getAvailablePromotionData(RequestPromotionVo reqVo) {
 		log.info("적용 가능 상품 쿠폰 데이터 조회");
 		

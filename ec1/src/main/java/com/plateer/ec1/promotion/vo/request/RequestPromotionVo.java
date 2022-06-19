@@ -1,6 +1,8 @@
-package com.plateer.ec1.promotion.vo;
+package com.plateer.ec1.promotion.vo.request;
 
 import java.util.List;
+
+import com.plateer.ec1.promotion.vo.common.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

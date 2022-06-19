@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.plateer.ec1.promotion.service.PromotionService;
-import com.plateer.ec1.promotion.vo.Product;
-import com.plateer.ec1.promotion.vo.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.ResponseCartCouponVo;
-import com.plateer.ec1.promotion.vo.ResponsePriceDiscountVo;
-import com.plateer.ec1.promotion.vo.ResponseProductCouponVo;
+import com.plateer.ec1.promotion.vo.common.Product;
+import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
+import com.plateer.ec1.promotion.vo.response.ResponseCartCouponVo;
+import com.plateer.ec1.promotion.vo.response.ResponsePriceDiscountVo;
+import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/promotion")
 @RequiredArgsConstructor
 public class PromotionController {
+	
 	private final PromotionService promotionService;
 	
 	@PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE}, value = "/getPriceDiscountApplyInfo")

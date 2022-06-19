@@ -6,13 +6,14 @@ import com.plateer.ec1.promotion.calculation.Calculation;
 import com.plateer.ec1.promotion.data.PromotionType;
 import com.plateer.ec1.promotion.factory.CalculationFactory;
 import com.plateer.ec1.promotion.service.PromotionService;
-import com.plateer.ec1.promotion.vo.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.ResponseCartCouponVo;
-import com.plateer.ec1.promotion.vo.ResponsePriceDiscountVo;
-import com.plateer.ec1.promotion.vo.ResponseProductCouponVo;
+import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
+import com.plateer.ec1.promotion.vo.response.ResponseCartCouponVo;
+import com.plateer.ec1.promotion.vo.response.ResponsePriceDiscountVo;
+import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
 
 @Service
 public class PromotionServiceImpl implements PromotionService{
+	
 	CalculationFactory factory = new CalculationFactory();
 	
 	@Override

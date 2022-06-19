@@ -5,19 +5,21 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.plateer.ec1.promotion.vo.CouponProductVo;
-import com.plateer.ec1.promotion.vo.ProductCouponVo;
-import com.plateer.ec1.promotion.vo.Promotion;
-import com.plateer.ec1.promotion.vo.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.ResponseBaseVo;
-import com.plateer.ec1.promotion.vo.ResponseCartCouponVo;
-import com.plateer.ec1.promotion.vo.ResponseProductCouponVo;
+import com.plateer.ec1.promotion.vo.common.CouponProductVo;
+import com.plateer.ec1.promotion.vo.common.ProductCouponVo;
+import com.plateer.ec1.promotion.vo.common.Promotion;
+import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
+import com.plateer.ec1.promotion.vo.response.ResponseBaseVo;
+import com.plateer.ec1.promotion.vo.response.ResponseCartCouponVo;
+import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CartCouponCalculation implements Calculation{
+	
 	private RequestPromotionVo reqVo = null;
+	
 	public CartCouponCalculation(RequestPromotionVo reqVo){
 		this.reqVo = reqVo;
 	}
