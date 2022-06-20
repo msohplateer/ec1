@@ -1,9 +1,9 @@
 package com.plateer.ec1.promotion.calculator;
 
-import com.plateer.ec1.promotion.vo.common.Promotion;
-import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.response.ResponseBaseVo;
+import com.plateer.ec1.promotion.dto.common.Promotion;
+import com.plateer.ec1.promotion.dto.request.RequestPromotionDto;
+import com.plateer.ec1.promotion.dto.response.ResponseBaseDto;
 
 public interface Calculator {
-	public ResponseBaseVo getCalculationData();
+	public ResponseBaseDto getCalculationData();
 }

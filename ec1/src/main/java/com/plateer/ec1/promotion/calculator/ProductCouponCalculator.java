@@ -5,25 +5,25 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.plateer.ec1.promotion.vo.common.CouponProductVo;
-import com.plateer.ec1.promotion.vo.common.ProductCouponVo;
-import com.plateer.ec1.promotion.vo.common.Promotion;
-import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.response.ResponseBaseVo;
-import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
+import com.plateer.ec1.promotion.dto.common.CouponProductDto;
+import com.plateer.ec1.promotion.dto.common.ProductCouponDto;
+import com.plateer.ec1.promotion.dto.common.Promotion;
+import com.plateer.ec1.promotion.dto.request.RequestPromotionDto;
+import com.plateer.ec1.promotion.dto.response.ResponseBaseDto;
+import com.plateer.ec1.promotion.dto.response.ResponseProductCouponDto;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ProductCouponCalculator implements Calculator{
 	
-	private RequestPromotionVo reqVo;
+	private RequestPromotionDto reqVo;
 	
-	public ProductCouponCalculator(RequestPromotionVo reqVo){
+	public ProductCouponCalculator(RequestPromotionDto reqVo){
 		this.reqVo = reqVo;
 	}
 	
-	private Promotion getAvailablePromotionData(RequestPromotionVo reqVo) {
+	private Promotion getAvailablePromotionData(RequestPromotionDto reqVo) {
 		log.info("적용 가능 상품 쿠폰 데이터 조회");
 		
 		Promotion promotion = new Promotion();
@@ -35,9 +35,9 @@ public class ProductCouponCalculator implements Calculator{
 		return promotion;
 	}
 
-	private ResponseProductCouponVo calculateDcAmt(RequestPromotionVo reqVo, Promotion prm) {
+	private ResponseProductCouponDto calculateDcAmt(RequestPromotionDto reqVo, Promotion prm) {
 		log.info("상품 쿠폰 할인 적용 금액 계산");
-		ProductCouponVo pcVo = new ProductCouponVo();
+		ProductCouponDto pcVo = new ProductCouponDto();
 		List promotionList = new ArrayList();
 		
 		promotionList.add(prm);
@@ -45,7 +45,7 @@ public class ProductCouponCalculator implements Calculator{
 		pcVo.setProduct(reqVo.getProductList().get(0));
 		pcVo.setPromotionList(promotionList);
 		
-		ResponseProductCouponVo rpcVo = new ResponseProductCouponVo();
+		ResponseProductCouponDto rpcVo = new ResponseProductCouponDto();
 		List productPromotionList = new ArrayList();
 		
 		productPromotionList.add(pcVo);
@@ -56,17 +56,17 @@ public class ProductCouponCalculator implements Calculator{
 		return rpcVo;
 	}
 
-	private ResponseProductCouponVo calculateMaxBenefit(ResponseProductCouponVo vo) {
+	private ResponseProductCouponDto calculateMaxBenefit(ResponseProductCouponDto vo) {
 		log.info("상품 쿠폰 최대혜택 계산");
 		return vo;
 	}
 
 	@Override
-	public ResponseBaseVo getCalculationData() {
+	public ResponseBaseDto getCalculationData() {
 		log.info("PriceDiscountCalculation getCalculationData call");
 		Promotion promotion = getAvailablePromotionData(this.reqVo);
-		ResponseProductCouponVo vo = calculateDcAmt(this.reqVo, promotion);
-		ResponseProductCouponVo resVo = calculateMaxBenefit(vo);
+		ResponseProductCouponDto vo = calculateDcAmt(this.reqVo, promotion);
+		ResponseProductCouponDto resVo = calculateMaxBenefit(vo);
 		return resVo;
 	}
 

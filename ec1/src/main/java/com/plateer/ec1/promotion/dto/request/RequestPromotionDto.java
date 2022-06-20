@@ -1,14 +1,14 @@
-package com.plateer.ec1.promotion.vo.request;
+package com.plateer.ec1.promotion.dto.request;
 
 import java.util.List;
 
-import com.plateer.ec1.promotion.vo.common.Product;
+import com.plateer.ec1.promotion.dto.common.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class RequestPromotionVo {
+public class RequestPromotionDto {
 	private String memberNo;
 	private List<Product> productList;
 	private Long couponIssueNo;

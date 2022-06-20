@@ -1,9 +1,9 @@
-package com.plateer.ec1.promotion.vo.response;
+package com.plateer.ec1.promotion.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class ResponseBaseVo {
+public class ResponseBaseDto {
 	private String memberNo;
 }

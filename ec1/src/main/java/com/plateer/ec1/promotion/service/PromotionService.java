@@ -1,12 +1,12 @@
 package com.plateer.ec1.promotion.service;
 
-import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.response.ResponseCartCouponVo;
-import com.plateer.ec1.promotion.vo.response.ResponsePriceDiscountVo;
-import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
+import com.plateer.ec1.promotion.dto.request.RequestPromotionDto;
+import com.plateer.ec1.promotion.dto.response.ResponseCartCouponDto;
+import com.plateer.ec1.promotion.dto.response.ResponsePriceDiscountDto;
+import com.plateer.ec1.promotion.dto.response.ResponseProductCouponDto;
 
 public interface PromotionService {
-	public ResponsePriceDiscountVo getPriceDiscountApplyData(RequestPromotionVo rpVo);
-	public ResponseProductCouponVo getProductCouponApplyData(RequestPromotionVo rpVo);
-	public ResponseCartCouponVo getCartCouponApplyData(RequestPromotionVo rpVo);
+	public ResponsePriceDiscountDto getPriceDiscountApplyData(RequestPromotionDto rpVo);
+	public ResponseProductCouponDto getProductCouponApplyData(RequestPromotionDto rpVo);
+	public ResponseCartCouponDto getCartCouponApplyData(RequestPromotionDto rpVo);
 }

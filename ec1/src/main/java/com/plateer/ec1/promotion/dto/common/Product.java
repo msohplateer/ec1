@@ -1,4 +1,4 @@
-package com.plateer.ec1.promotion.vo.common;
+package com.plateer.ec1.promotion.dto.common;
 
 import lombok.Data;
 

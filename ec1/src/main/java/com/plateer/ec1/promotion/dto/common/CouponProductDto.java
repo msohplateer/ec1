@@ -1,11 +1,11 @@
-package com.plateer.ec1.promotion.vo.common;
+package com.plateer.ec1.promotion.dto.common;
 
 import java.util.List;
 
 import lombok.Data;
 
 @Data
-public class CouponProductVo {
+public class CouponProductDto {
 	private Promotion promotion;
 	private List<Product> productList;
 	private String maxBenefitYn;

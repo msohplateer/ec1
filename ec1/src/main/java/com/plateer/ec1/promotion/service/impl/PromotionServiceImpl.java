@@ -4,12 +4,12 @@ import org.springframework.stereotype.Service;
 
 import com.plateer.ec1.promotion.calculator.Calculator;
 import com.plateer.ec1.promotion.data.PromotionType;
+import com.plateer.ec1.promotion.dto.request.RequestPromotionDto;
+import com.plateer.ec1.promotion.dto.response.ResponseCartCouponDto;
+import com.plateer.ec1.promotion.dto.response.ResponsePriceDiscountDto;
+import com.plateer.ec1.promotion.dto.response.ResponseProductCouponDto;
 import com.plateer.ec1.promotion.factory.CalculationFactory;
 import com.plateer.ec1.promotion.service.PromotionService;
-import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.response.ResponseCartCouponVo;
-import com.plateer.ec1.promotion.vo.response.ResponsePriceDiscountVo;
-import com.plateer.ec1.promotion.vo.response.ResponseProductCouponVo;
 
 @Service
 public class PromotionServiceImpl implements PromotionService{
@@ -17,21 +17,21 @@ public class PromotionServiceImpl implements PromotionService{
 	CalculationFactory factory = new CalculationFactory();
 	
 	@Override
-	public ResponsePriceDiscountVo getPriceDiscountApplyData(RequestPromotionVo rpVo) {
+	public ResponsePriceDiscountDto getPriceDiscountApplyData(RequestPromotionDto rpVo) {
 		Calculator calculation = factory.getPromotionCalculationData(rpVo, PromotionType.PRC_DC);
-		return (ResponsePriceDiscountVo)calculation.getCalculationData(); 
+		return (ResponsePriceDiscountDto)calculation.getCalculationData(); 
 	}
 
 	@Override
-	public ResponseProductCouponVo getProductCouponApplyData(RequestPromotionVo rpVo) {
+	public ResponseProductCouponDto getProductCouponApplyData(RequestPromotionDto rpVo) {
 		Calculator calculation = factory.getPromotionCalculationData(rpVo, PromotionType.PRD_CUP);
-		return (ResponseProductCouponVo)calculation.getCalculationData(); 
+		return (ResponseProductCouponDto)calculation.getCalculationData(); 
 	}
 
 	@Override
-	public ResponseCartCouponVo getCartCouponApplyData(RequestPromotionVo rpVo) {
+	public ResponseCartCouponDto getCartCouponApplyData(RequestPromotionDto rpVo) {
 		Calculator calculation = factory.getPromotionCalculationData(rpVo, PromotionType.CART_CUP);
-		return (ResponseCartCouponVo) calculation.getCalculationData(); 
+		return (ResponseCartCouponDto) calculation.getCalculationData(); 
 	}
 
 }

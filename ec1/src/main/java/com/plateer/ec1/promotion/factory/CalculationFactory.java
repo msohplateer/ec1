@@ -7,14 +7,14 @@ import com.plateer.ec1.promotion.calculator.CartCouponCalculator;
 import com.plateer.ec1.promotion.calculator.PriceDiscountCalculator;
 import com.plateer.ec1.promotion.calculator.ProductCouponCalculator;
 import com.plateer.ec1.promotion.data.PromotionType;
-import com.plateer.ec1.promotion.vo.request.RequestPromotionVo;
-import com.plateer.ec1.promotion.vo.response.ResponseBaseVo;
+import com.plateer.ec1.promotion.dto.request.RequestPromotionDto;
+import com.plateer.ec1.promotion.dto.response.ResponseBaseDto;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CalculationFactory {
-	public Calculator getPromotionCalculationData(RequestPromotionVo rqpVo, PromotionType type) {
+	public Calculator getPromotionCalculationData(RequestPromotionDto rqpVo, PromotionType type) {
 		log.info("CalulationFactory call");
 		switch(type) {
 			case PRC_DC:
