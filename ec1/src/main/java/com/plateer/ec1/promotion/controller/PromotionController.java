@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.plateer.ec1.promotion.dto.common.Product;
-import com.plateer.ec1.promotion.dto.request.RequestPromotionDto;
-import com.plateer.ec1.promotion.dto.response.ResponseCartCouponDto;
-import com.plateer.ec1.promotion.dto.response.ResponsePriceDiscountDto;
-import com.plateer.ec1.promotion.dto.response.ResponseProductCouponDto;
+import com.plateer.ec1.promotion.dto.request.PromotionRequestDto;
+import com.plateer.ec1.promotion.dto.response.CartCouponResponseDto;
+import com.plateer.ec1.promotion.dto.response.PriceDiscountResponseDto;
+import com.plateer.ec1.promotion.dto.response.ProductCouponResponseDto;
 import com.plateer.ec1.promotion.service.PromotionService;
 
 import lombok.RequiredArgsConstructor;
@@ -34,22 +34,22 @@ public class PromotionController {
 	private final PromotionService promotionService;
 	
 	@PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE}, value = "/getPriceDiscountApplyInfo")
-	public ResponsePriceDiscountDto getPriceDiscountApplyData(@RequestBody RequestPromotionDto rpVo) {
+	public PriceDiscountResponseDto getPriceDiscountApplyData(@RequestBody PromotionRequestDto rpVo) {
 		log.info("getPriceDiscountApplyInfo controller call request data :" + rpVo);
-		ResponsePriceDiscountDto rpdVo = promotionService.getPriceDiscountApplyData(rpVo);
+		PriceDiscountResponseDto rpdVo = promotionService.getPriceDiscountApplyData(rpVo);
 		return rpdVo; 
 	}
 	
 	@PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE}, value = "/getProductCouponApplyInfo")
-	public ResponseProductCouponDto getProductCouponApplyData(@RequestBody RequestPromotionDto rpVo) {
+	public ProductCouponResponseDto getProductCouponApplyData(@RequestBody PromotionRequestDto rpVo) {
 		log.info("getProductCouponApplyInfo controller call request data :" + rpVo);
-		ResponseProductCouponDto rpcVo = promotionService.getProductCouponApplyData(rpVo);
+		ProductCouponResponseDto rpcVo = promotionService.getProductCouponApplyData(rpVo);
 		return rpcVo; 
 	}
 	
 	@PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE}, value = "/getCartCouponApplyInfo")
-	public ResponseCartCouponDto getCartCouponApplyData(@RequestBody RequestPromotionDto rpVo) {
-		ResponseCartCouponDto rccVo = promotionService.getCartCouponApplyData(rpVo);
+	public CartCouponResponseDto getCartCouponApplyData(@RequestBody PromotionRequestDto rpVo) {
+		CartCouponResponseDto rccVo = promotionService.getCartCouponApplyData(rpVo);
 		return rccVo; 
 	}
 }

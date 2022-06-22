@@ -4,6 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class ResponseBaseDto {
+public class BaseResponseDto {
 	private String memberNo;
 }

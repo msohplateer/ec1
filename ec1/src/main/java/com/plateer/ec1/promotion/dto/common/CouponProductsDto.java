@@ -5,8 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class CouponProductDto {
+public class CouponProductsDto {
 	private Promotion promotion;
 	private List<Product> productList;
-	private String maxBenefitYn;
 }

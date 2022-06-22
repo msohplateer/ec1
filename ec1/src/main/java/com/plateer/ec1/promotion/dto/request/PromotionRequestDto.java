@@ -8,8 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class RequestPromotionDto {
+public class PromotionRequestDto {
 	private String memberNo;
 	private List<Product> productList;
-	private Long couponIssueNo;
+	private List couponIssueNoList;
 }

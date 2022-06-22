@@ -7,7 +7,7 @@ import com.plateer.ec1.promotion.dto.common.Product;
 import lombok.Data;
 
 @Data
-public class ResponsePriceDiscountDto extends ResponseBaseDto{
+public class PriceDiscountResponseDto extends BaseResponseDto{
 	private String memberNo;
 	private List<Product> productList;
 }
