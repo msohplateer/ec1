@@ -1,10 +1,11 @@
-package com.plateer.ec1.promotion.calculator;
+package com.plateer.ec1.promotion.calculator.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.plateer.ec1.promotion.calculator.Calculator;
 import com.plateer.ec1.promotion.data.PromotionType;
 import com.plateer.ec1.promotion.dto.common.ProductCouponsDto;
 import com.plateer.ec1.promotion.dto.common.Promotion;

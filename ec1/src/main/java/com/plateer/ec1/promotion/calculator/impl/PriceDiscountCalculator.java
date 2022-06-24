@@ -1,7 +1,8 @@
-package com.plateer.ec1.promotion.calculator;
+package com.plateer.ec1.promotion.calculator.impl;
 
 import org.springframework.stereotype.Component;
 
+import com.plateer.ec1.promotion.calculator.Calculator;
 import com.plateer.ec1.promotion.data.PromotionType;
 import com.plateer.ec1.promotion.dto.common.Promotion;
 import com.plateer.ec1.promotion.dto.request.PromotionRequestDto;
